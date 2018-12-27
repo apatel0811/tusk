@@ -1,0 +1,252 @@
+# Interview-Questions
+AWS-Devops Questions
+
+
+Auto Rabbit Interview Questions:
+
+1.How do you increase RAM for a EC2 instance?
+
+2. How do you maintain DR in a cloud?
+
+3. How do you configure  SSL in Tomcat?
+
+
+Capgemini Interview Questions:
+
+1.what is chef work flow
+
+2.how we get the properites of node
+3.what is resourse
+4.what is diff b/w chef server and chef client
+5.what is run list
+6.what is diff b/w cookbook and recipe
+7.how bootstrap will work & what is process
+8.which language chef deploy
+
+
+HCL Interview Questions:
+
+1) tell me your roles and responsabilites ?
+
+2) what is python- boto ?
+ 
+3) are you using private cloud ?
+ 
+4) how to create the aws instances using configuration tools ?
+ 
+5) asking on modules ?
+ 
+6) ci/cd work flow ?
+ 
+7)  asking about plugins in jenkins ?
+ 
+8) explain ansible playbook ?
+ 
+9) how to deploy the artifacts ?
+ 
+10)  how to build the artifacts ?
+ 
+11) git fetch ?
+ 
+12) git pull ?
+*********************************
+
+Q: Is it possible to modify the route tables of virtual private cloud? If possible then how? 
+
+Yes, it is possible go modify the route table of VPC. In order to specify which subnets are to be routed to VPC, Internet gateway or any other instances you are allowed to create route rules.
+
+Q: Mention the process in which instances without public IP addresses access the Internet.
+
+There are two ways in which instances without public addresses can make use of the Internet. 
+
+Those instances that are without public IP addresses can route their traffic through a NAT instance or a NAT gateway so that it can access the Internet. In order to traverse the Internet, these instances make use of public IP address of the NAT gateway or the NAT instance. Outbound communication is allowed by the NAT instance or NAT gateway but it do not permit machines on the Internet to start a connection with the addressed instances privately. 
+
+For those VPCs that are provided by a hardware VPN connection or direct connect connection, the instances can route the Internet traffic through the virtual private gateway to the existing data centre. It can then access the Internet through the existing egress points and also new tweak security or monitoring devices.
+
+
+Q3). What are the main components of AWS?
+
+Answer: Elow mentioned are the key components of AWS:
+
+    Route 53: A DNS web facility
+    Easy E-mail Facility: It permits transfer of e-mail using RESTFUL API demand or through consistent SMTP
+    Self and Access Organization: It offers improved security and uniqueness management for your AWS account
+    Simple Storage Device known as S3: It is a storing device and the greatest extensively used AWS service
+    Elastic Compute Cloud known as EC2: It offers on-demand computing properties for hosting requests. It is very valuable in case of random workloads
+    Elastic Block Store known as EBS: It delivers determined storage volumes that assign to EC2 to permit you to continue data past the lifetime of a single EC2
+    CloudWatch: To screen AWS possessions, it permits administrators to assess and gather key. Similarly, one can set an announcement alarm in case of issue
+    
+    
+Q- There are chiefly four types of storage offered by AWS.
+
+    Amazon EBS: Its sturdy, block-level storage capacities can involve in running Amazon EC2 occurrence. The Amazon EBS volume continues self-sufficiently from the running lifespan of an Amazon EC2 occurrence. After an EBS volume is involved to an example, you can use it like any other bodily hard drive. Amazon EBS encryption feature provisions encryption feature.
+    Amazon EC2 Instance Store: Storage disk that is involved to the host computer is mentioned to as occurrence store. The instance storage offers provisional block-level storing for Amazon EC2 instances. The data on an illustration store volume perseveres only during the life of the related Amazon EC2 instance; if you halt or dismiss an instance, any data on occurrence store volumes is misplaced.
+    Amazon S3: Amazon S3 delivers access to dependable and budget data storage organization. It is intended to make web-scale calculating simpler by permitting you to store and save any amount of data, at any period, from within Amazon EC2 or anyplace on the web.
+    Addition Storage: Every time your presentation an occurrence from an AMI, a root storage device is twisted for that occurrence. The root storage device comprises all the information essential to boot the occurrence. You can stipulate storage volumes in calculation to the root device volume when you generate an AMI or present an instance using hunk device mapping.
+
+How can you send request to Amazon S3?
+A25: Amazon S3 is a REST service, you can send request by using the REST API or the AWS SDK wrapper libraries that wrap the underlying Amazon S3 REST API.
+
+
+*********************************
+
+1.How do you copy files from source(vm/anything) to destination(s3)
+
+aws s3 cp <source> <destination>
+The “source” and “destination” arguments can either be local paths or S3 locations. The three possible variations of this are:
+aws s3 cp <Local Path> <S3 URI>
+aws s3 cp <S3 URI> <Local Path>
+aws s3 cp <S3 URI> <S3 URI>
+
+#SAMPLE SCRIPT  
+#!/bin/bash
+
+#copy my-file.txt to the to the "data" directory located in my-s3-bucket 
+aws s3 cp my-file.txt s3://my-s3-bucket/data/
+
+#copy all files in my-data-dir into the "data" directory located in my-s3-bucket 
+aws s3 cp my-data-dir/ s3://my-s3-bucket/data/ --recursive
+
+*********************************
+
+Linux Cloud Engineer
+Boot process of Linux
+How to install package (Red hat, Debian, Ubuntu)
+Difference between soft link and hard link
+SSH not working in general for linux. how will you troubleshoot.
+Permissions - chown, chgrp, chmod
+sticky bit
+sgid
+suid
+Linux File Structure
+what is Shell - UI
+Primary, Extended, Logical Partition
+Different run levels
+single user mode and its use
+file of runlevels - /etc/init
+What is GRUB
+/etc/resolve.conf --> where DNS server names are stored
+How to mount file system
+chkconfig command -> to make changes persistent
+How to check CPU and memory
+ifconfig
+ip addr show
+TOP 100 Linux commands
+How to mount a file system
+lsblk -> command to check which is not mounted
+How to do permanent mount?
+What is \etc\fstab
+What is mounting in Linux
+Difference between ext2, ext3, ext4
+RAID0, RAID1 difference
+What are SSD?
+What are IP tables?
+How to create an Empty file
+how to apply ACL on a file -> setfacl command
+LVM - How to create logical Volume
+What is SEL (secure enhanced linux)
+How to create user/usergroup?
+Linux is overloaded, How to troubleshoot
+
+*********************************
+aws_interview
+My AWS related questions for interviews
+
+what services have experience/used?
+IAM Route53 S3 EC2 ELB Security Groups Elastic IPS AMI EBS CloudWatch CloudTrail
+
+How many accounts/envs/vpc?
+Regions and AZ.
+AWS VPC
+
+vpc between AZ? Regions? what is private/public subnets. if I want to run redis/mongo/postgres DB - where?
+
+AWS EC2
+what is AMI
+What is included to the AMI?
+root device? Does it contains kernel image?
+Could I launch instance without AMI?
+Vertical scalability. How?
+is it possible to migrate between AZ? HOW?
+What is key pair? what is their benefits?
+what is iam instance profile?
+AMI
+What is ALAMI
+What is the actual version of ALAMI?
+Do you know for example default MTA in ALAMI? how can i figure it out?
+What helpful/useful I can find in the release notes
+Why do you use ALAMI? (more safety, limitation sshd, less vulnerability, minimal required packages,	default repositories)
+what packet manager is using?
+How to share AMI between accounts?
+Ec2 stopping and starting process. How to?
+stopping - normal shutdown -> EBS still attached
+what is terminating (normal shutdown -> deleting EBS -> deleting instance)
+could you describe steps how can I launch instance from AWS console?
+
+Security Groups
+
+what is it?
+statefull or stateless
+ingress egress
+EC2 instances only?
+Case - instance launched. trying to ssh access. ssh is not working. what is the investigation process?
+ssh error code Connection timed out User key not recognized by the server Host key not found, permission denied Unprotected private key file Server refused our key or No supported authentication method available
+key pair/password
+what user is using? does "permitrootloging yes" enabled?
+AWS console: launch time/health checks security groups     aws accounts limits      
+What is S3 How did you use it? For what purposes?
+
+What is instance metadata. How to retrieve it?
+
+Terraform
+
+how big was your infra
+How did you used terraform
+custom providers?
+what was a typical workflow for new ec2 instance
+describe a common module for general aws instance
+what is remote state
+what if you need 20-30 servers
+Resource management in aws
+Additional section:
+
+how to create ptr record?
+security best practise? (iam, password base/disable, security groups - review rules regularly, open only required permissions)
+===============================================================
+Boot process of Linux
+How to install package (Red hat, Debian, Ubuntu)
+Difference between soft link and hard link
+SSH not working in general for linux. how will you troubleshoot.
+Permissions - chown, chgrp, chmod
+sticky bit
+sgid
+suid
+Linux File Structure
+what is Shell - UI
+Primary, Extended, Logical Partition
+Different run levels
+single user mode and its use
+file of runlevels - /etc/init
+What is GRUB
+/etc/resolve.conf --> where DNS server names are stored
+How to mount file system
+chkconfig command -> to make changes persistent
+How to check CPU and memory
+ifconfig
+ip addr show
+TOP 100 Linux commands
+How to mount a file system
+lsblk -> command to check which is not mounted
+How to do permanent mount?
+What is \etc\fstab
+What is mounting in Linux
+Difference between ext2, ext3, ext4
+RAID0, RAID1 difference
+What are SSD?
+What are IP tables?
+How to create an Empty file
+how to apply ACL on a file -> setfacl command
+LVM - How to create logical Volume
+What is SEL (secure enhanced linux)
+How to create user/usergroup?
+Linux is overloaded, How to troubleshoot
